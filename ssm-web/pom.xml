@@ -7,11 +7,11 @@
     <parent>
         <groupId>com.nf147</groupId>
         <artifactId>ssm-empty</artifactId>
-        <version>1</version>
+        <version>1.00</version>
     </parent>
 
-    <artifactId>ssm-web-admin</artifactId>
-    <version>1</version>
+    <artifactId>ssm-web</artifactId>
+    <version>${project.parent.version}</version>
 
     <packaging>war</packaging>
 
@@ -19,13 +19,8 @@
         <!-- 模块依赖 -->
         <dependency>
             <groupId>com.nf147</groupId>
-            <artifactId>ssm-common</artifactId>
-            <version>1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.nf147</groupId>
             <artifactId>ssm-service</artifactId>
-            <version>1</version>
+            <version>1.00</version>
         </dependency>
 
         <!-- Spring Web MVC -->
@@ -54,5 +49,20 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <hostName>localhost</hostName>    <!-- Default: localhost -->
+                    <port>8080</port>                 <!-- Default: 8080 -->
+                    <path>/</path>                    <!-- Default: /${project.artifactId}-->
+                    <uriEncoding>UTF-8</uriEncoding>  <!-- Default: ISO-8859-1 -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     
 </project>
