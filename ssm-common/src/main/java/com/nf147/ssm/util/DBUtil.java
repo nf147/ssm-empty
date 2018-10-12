@@ -1,4 +1,4 @@
-package com.nf147.ssm_service.util;
+package com.nf147.ssm.util;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

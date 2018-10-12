@@ -1,4 +1,4 @@
-package com.nf147.ssm_service.services;
+package com.nf147.ssm.services;
 
 public interface DualService {
     void dual();

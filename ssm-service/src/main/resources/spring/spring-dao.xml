@@ -4,7 +4,6 @@
        xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-
     <!--使用外部文件-->
     <context:property-placeholder location="classpath:jdbc.properties" />
 
@@ -25,7 +24,7 @@
     <!--配置 mybatis-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="typeAliasesPackage" value="com.nf147.ssm_service.entity" />
+        <property name="typeAliasesPackage" value="com.nf147.ssm.entity" />
         <property name="configLocation" value="classpath:mybatis-config.xml" />
         <property name="mapperLocations" value="classpath:mapper/*.xml" />
     </bean>
@@ -33,7 +32,7 @@
     <!--自动注入 Mapper-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-        <property name="basePackage" value="com.nf147.ssm_service.dao" />
+        <property name="basePackage" value="com.nf147.ssm.dao" />
     </bean>
 
     <!--配置声明式事务管理-->
